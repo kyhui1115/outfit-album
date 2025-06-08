@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-darkgray: #404040;
+}
+
+html {
+  color: #404040;
+}
+
+body {
+  padding-top: env(safe-area-inset-top);
+}

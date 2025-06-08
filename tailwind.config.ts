@@ -4,6 +4,9 @@ const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {},
+    screens: {
+      sm: "550px",
+    },
   },
   important: true,
 };
