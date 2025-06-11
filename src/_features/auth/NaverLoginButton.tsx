@@ -16,7 +16,7 @@ export default function NaverLoginButton() {
         width="20"
         height="20"
       />
-      <span className="font-semibold">Login with NAVER</span>
+      <span className="font-semibold text-white">Login with NAVER</span>
     </Button>
   );
 }
