@@ -1,4 +1,4 @@
-import { PiCalendarMinusDuotone, PiCoatHangerDuotone } from "react-icons/pi";
+import { PiCalendarMinusDuotone, PiCoatHanger } from "react-icons/pi";
 
 const DIC = {
   tabBarList: [
@@ -9,10 +9,11 @@ const DIC = {
     },
     {
       name: "album",
-      icon: <PiCoatHangerDuotone className="text-2xl" />,
+      icon: <PiCoatHanger className="text-2xl" />,
       url: "/album",
     },
   ],
+  weekDayList: ["sun.", "mon.", "tue.", "wed.", "thu.", "fri.", "sat."],
 };
 
 export default DIC;
