@@ -1,0 +1,22 @@
+{
+  "name": "Outfit Album",
+  "short_name": "OUTFIT",
+  "description": "달력과 앨범을 통해 나의 아웃핏을 관리하세요",
+  "scope": "/",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#404040",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
