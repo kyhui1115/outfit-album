@@ -39,7 +39,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} flex justify-center bg-gray-100 antialiased`}
       >
-        <div className="flex h-[100dvh] w-screen max-w-[500px] flex-col bg-white">
+        <div className="flex h-[100dvh] w-screen max-w-[500px] flex-col bg-white pt-14">
           <Header name="OUTFIT" />
           <div className="h-full w-full">{children}</div>
         </div>
