@@ -3,7 +3,7 @@ import DIC from "@/_shared/dictionary";
 
 export default function TabBarList() {
   return (
-    <div className="border-darkgray fixed bottom-0 flex h-[50px] w-full max-w-[1024px] border-t">
+    <div className="border-darkgray fixed bottom-0 flex h-[50px] w-full max-w-[500px] border-t">
       {DIC.tabBarList.map((tabBar, idx) => (
         <TabBarItemButton
           key={tabBar.name}
