@@ -8,7 +8,7 @@ interface Props {
 export default function CalendarDayItem({ idx }: Props) {
   return (
     <div
-      className={`h-[90px] w-full border-b ${(idx + 1) % 7 === 0 ? "" : "border-r"}`}
+      className={`h-[80px] w-full border-b ${(idx + 1) % 7 === 0 ? "" : "border-r"}`}
     >
       <CalendarDayItemHeader idx={idx} />
       <CalendarDayItemBodyButton idx={idx} />

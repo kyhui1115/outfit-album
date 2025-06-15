@@ -7,7 +7,7 @@ interface Props {
 export default function CalendarEmptyDayItem({ idx }: Props) {
   return (
     <div
-      className={`h-[90px] w-full border-b ${(idx + 1) % 7 === 0 ? "" : "border-r"} bg-beige-light`}
+      className={`h-[80px] w-full border-b ${(idx + 1) % 7 === 0 ? "" : "border-r"} bg-beige-light`}
     />
   );
 }
