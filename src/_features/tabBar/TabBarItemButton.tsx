@@ -16,7 +16,7 @@ export default function TabBarItemButton({ icon, url, idx }: Props) {
 
   return (
     <Button
-      className={`flex w-full items-center justify-center ${idx === 0 ? "border-darkgray border-r" : ""} ${url === pathname ? "bg-beige-light" : "bg-white"}`}
+      className={`flex w-full items-center justify-center ${idx === 0 ? "border-darkgray border-r" : ""} ${url === pathname ? "bg-beige-normal" : "bg-white"}`}
       onClick={() => router.push(url)}
     >
       {icon}

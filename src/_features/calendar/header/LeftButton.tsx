@@ -1,6 +1,7 @@
 "use client";
 
 import { BsChevronCompactLeft } from "react-icons/bs";
+import { PiCaretLeftBold } from "react-icons/pi";
 
 import useCalendarStore from "@/_shared/store/calendar";
 import Button from "@/_shared/ui/Button";
@@ -24,7 +25,7 @@ export default function LeftButton() {
       onClick={leftButtonHandler}
       className="flex h-full w-full items-center justify-center"
     >
-      <BsChevronCompactLeft className="text-xl" />
+      <PiCaretLeftBold className="text-lg" />
     </Button>
   );
 }

@@ -2,8 +2,17 @@
 
 import useCalendarStore from "@/_shared/store/calendar";
 
+import LeftButton from "./LeftButton";
+import RightButton from "./RightButton";
+
 export default function MonthText() {
   const { month } = useCalendarStore();
 
-  return <span className="mb-4 font-semibold">{month}</span>;
+  return (
+    <div className="mb-4 flex w-full items-center justify-center">
+      <LeftButton />
+      <span className="font-semibold">{month}</span>
+      <RightButton />
+    </div>
+  );
 }

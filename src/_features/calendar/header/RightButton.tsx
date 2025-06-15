@@ -1,6 +1,7 @@
 "use client";
 
 import { BsChevronCompactRight } from "react-icons/bs";
+import { PiCaretRightBold } from "react-icons/pi";
 
 import useCalendarStore from "@/_shared/store/calendar";
 import Button from "@/_shared/ui/Button";
@@ -24,7 +25,7 @@ export default function RightButton() {
       onClick={rightButtonHandler}
       className="flex h-full w-full items-center justify-center"
     >
-      <BsChevronCompactRight className="text-xl" />
+      <PiCaretRightBold className="text-lg" />
     </Button>
   );
 }
