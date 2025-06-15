@@ -1,7 +1,9 @@
-interface Props {
-  month: number;
-}
+"use client";
 
-export default function MonthText({ month }: Props) {
-  return <span className="font-semibold">{month}</span>;
+import useCalendarStore from "@/_shared/store/calendar";
+
+export default function MonthText() {
+  const { month } = useCalendarStore();
+
+  return <span className="mb-4 font-semibold">{month}</span>;
 }
