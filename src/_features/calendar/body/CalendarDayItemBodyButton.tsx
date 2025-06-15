@@ -1,10 +1,10 @@
 import Button from "@/_shared/ui/Button";
 
 interface Props {
-  idx: number;
+  date: number;
 }
 
-export default function CalendarDayItemBodyButton({ idx }: Props) {
+export default function CalendarDayItemBodyButton({ date }: Props) {
   return (
     <Button className="h-full w-full">
       <></>

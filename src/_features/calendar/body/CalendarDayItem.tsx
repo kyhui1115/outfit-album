@@ -3,15 +3,16 @@ import CalendarDayItemHeader from "./CalendarDayItemHeader";
 
 interface Props {
   idx: number;
+  date: number;
 }
 
-export default function CalendarDayItem({ idx }: Props) {
+export default function CalendarDayItem({ idx, date }: Props) {
   return (
     <div
       className={`h-[80px] w-full border-b ${(idx + 1) % 7 === 0 ? "" : "border-r"}`}
     >
-      <CalendarDayItemHeader idx={idx} />
-      <CalendarDayItemBodyButton idx={idx} />
+      <CalendarDayItemHeader date={date} />
+      <CalendarDayItemBodyButton date={date} />
     </div>
   );
 }

@@ -9,22 +9,23 @@ import CalendarEmptyDayItem from "./CalendarEmptyDayItem";
 
 export default function CalendarBody() {
   const { year, month } = useCalendarStore();
-  const firstDay = dayjs(`${year}-${month}-1`).day();
+  const firstDate = dayjs(`${year}-${month}-1`).day();
   const daysInMonth = dayjs(`${year}-${month}-1`).daysInMonth();
 
-  const isCalendarDayList = defaultDayList.map((day, idx) => {
-    if (firstDay <= idx && idx < daysInMonth) {
-      return true;
-    } else {
-      return day;
-    }
+  const calendarDateList = Array.from({ length: 42 }, (_, idx) => {
+    return {
+      date: idx - firstDate + 1,
+      isDay: idx >= firstDate && idx < firstDate + daysInMonth,
+    };
   });
+
+  console.log(calendarDateList);
 
   return (
     <div className="grid w-full grid-cols-7">
-      {isCalendarDayList.map((isDay, idx) =>
-        isDay ? (
-          <CalendarDayItem key={idx} idx={idx} />
+      {calendarDateList.map((day, idx) =>
+        day?.isDay ? (
+          <CalendarDayItem key={idx} idx={idx} date={day?.date} />
         ) : (
           <CalendarEmptyDayItem key={idx} idx={idx} />
         ),
@@ -32,5 +33,3 @@ export default function CalendarBody() {
     </div>
   );
 }
-
-const defaultDayList = Array(35).fill(false);
