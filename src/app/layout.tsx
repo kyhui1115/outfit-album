@@ -41,7 +41,7 @@ export default function RootLayout({
       >
         <div className="flex h-screen w-screen max-w-[500px] flex-col bg-white">
           <Header name="OUTFIT" />
-          <div className="h-full w-full pt-14">{children}</div>
+          <div className="h-full w-full bg-red-200 pt-14"></div>
         </div>
       </body>
     </html>
