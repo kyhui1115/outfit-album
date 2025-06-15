@@ -7,7 +7,7 @@ interface Props {
 export default function Layout({ children }: Props) {
   return (
     <div className="flex h-full w-full flex-col items-center">
-      {children}
+      <div className="flex h-full w-full items-center">{children}</div>
       <TabBarList />
     </div>
   );

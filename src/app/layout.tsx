@@ -18,9 +18,15 @@ export const metadata: Metadata = {
     { rel: "icon", url: "/icon-512.png", sizes: "512x512", type: "image/png" },
     { rel: "apple-touch-icon", url: "/icon-192.png" },
   ],
-  viewport:
-    "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
   manifest: "/manifest.json",
+};
+
+export const viewport = {
+  minimumScale: 1,
+  initialScale: 1,
+  width: "device-width",
+  shrinkToFit: "no",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -33,9 +39,9 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} flex justify-center bg-gray-100 antialiased`}
       >
-        <div className="flex h-screen w-screen max-w-[1024px] flex-col bg-white">
+        <div className="flex h-screen w-screen max-w-[500px] flex-col bg-white">
           <Header name="OUTFIT" />
-          <div className="h-full w-full px-4">{children}</div>
+          <div className="h-full w-full">{children}</div>
         </div>
       </body>
     </html>
