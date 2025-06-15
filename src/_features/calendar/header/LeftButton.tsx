@@ -20,7 +20,10 @@ export default function LeftButton() {
   };
 
   return (
-    <Button onClick={leftButtonHandler} className="h-full">
+    <Button
+      onClick={leftButtonHandler}
+      className="flex h-full w-full items-center justify-center"
+    >
       <BsChevronCompactLeft className="text-xl" />
     </Button>
   );

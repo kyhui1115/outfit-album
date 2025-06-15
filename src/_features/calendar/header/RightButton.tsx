@@ -20,7 +20,10 @@ export default function RightButton() {
   };
 
   return (
-    <Button onClick={rightButtonHandler} className="h-full">
+    <Button
+      onClick={rightButtonHandler}
+      className="flex h-full w-full items-center justify-center"
+    >
       <BsChevronCompactRight className="text-xl" />
     </Button>
   );
