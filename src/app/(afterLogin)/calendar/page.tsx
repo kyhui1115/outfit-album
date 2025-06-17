@@ -11,11 +11,13 @@ export default function Page() {
   const dragging = useRef(false);
 
   const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
     dragging.current = true;
     startX.current = e.clientX;
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
+    e.preventDefault();
     if (!dragging.current) return;
     const diff = e.clientX - startX.current;
     setTranslateX(diff);
@@ -27,11 +29,14 @@ export default function Page() {
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
+    e.preventDefault();
     dragging.current = true;
     startX.current = e.touches[0].clientX;
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
+    e.preventDefault();
+
     if (!dragging.current) return;
     const diff = e.touches[0].clientX - startX.current;
     setTranslateX(diff);
