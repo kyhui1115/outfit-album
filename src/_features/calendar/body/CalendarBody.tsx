@@ -19,8 +19,6 @@ export default function CalendarBody() {
     };
   });
 
-  console.log(calendarDateList);
-
   return (
     <div className="grid w-full grid-cols-7">
       {calendarDateList.map((day, idx) =>
