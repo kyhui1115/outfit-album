@@ -6,7 +6,10 @@ interface Props {
 
 export default function Button({ className, children, onClick }: Props) {
   return (
-    <button onClick={onClick} className={`cursor-pointer ${className}`}>
+    <button
+      onClick={onClick}
+      className={`cursor-pointer ${className} flex items-center justify-center`}
+    >
       {children}
     </button>
   );
