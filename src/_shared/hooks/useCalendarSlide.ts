@@ -40,17 +40,29 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
       setTranslateX(-screenWidth);
       setTimeout(() => {
         setSlideList(prev => [...prev.slice(0, 2), prev[prev.length - 1]]);
-        setMonth(month === 12 ? 1 : month + 1);
-        setYear(month === 12 ? year + 1 : year);
+        setMonth(prevMonth => {
+          if (prevMonth === 12) {
+            setYear(prevYear => prevYear + 1);
+            return 1;
+          }
+          return prevMonth + 1;
+        });
         setTranslateX(0);
         setIsAnimating(false);
       }, 100);
-    } else if (translateX > 0) {
+    }
+
+    if (translateX > 0) {
       setTranslateX(screenWidth);
       setTimeout(() => {
         setSlideList(prev => [prev[0], ...prev.slice(1, 3)]);
-        setMonth(month === 1 ? 12 : month - 1);
-        setYear(month === 1 ? year - 1 : year);
+        setMonth(prevMonth => {
+          if (prevMonth === 1) {
+            setYear(prevYear => prevYear - 1);
+            return 12;
+          }
+          return prevMonth - 1;
+        });
         setTranslateX(0);
         setIsAnimating(false);
       }, 100);
