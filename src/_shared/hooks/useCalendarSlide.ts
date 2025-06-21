@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import useCalendarStore from "../store/calendar";
 
 const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
-  const { month, year, setMonth, setYear } = useCalendarStore();
+  const { month, setMonth, setYear } = useCalendarStore();
 
   const [translateX, setTranslateX] = useState(0);
   const [screenWidth, setScreenWidth] = useState(0);
@@ -40,13 +40,8 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
       setTranslateX(-screenWidth);
       setTimeout(() => {
         setSlideList(prev => [...prev.slice(0, 2), prev[prev.length - 1]]);
-        setMonth(prevMonth => {
-          if (prevMonth === 12) {
-            setYear(prevYear => prevYear + 1);
-            return 1;
-          }
-          return prevMonth + 1;
-        });
+        setMonth(prev => (prev === 12 ? 1 : prev + 1));
+        setYear(prev => (month === 12 ? prev + 1 : prev));
         setTranslateX(0);
         setIsAnimating(false);
       }, 100);
@@ -56,13 +51,8 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
       setTranslateX(screenWidth);
       setTimeout(() => {
         setSlideList(prev => [prev[0], ...prev.slice(1, 3)]);
-        setMonth(prevMonth => {
-          if (prevMonth === 1) {
-            setYear(prevYear => prevYear - 1);
-            return 12;
-          }
-          return prevMonth - 1;
-        });
+        setMonth(prev => (prev === 1 ? 12 : prev - 1));
+        setYear(prev => (month === 1 ? prev - 1 : prev));
         setTranslateX(0);
         setIsAnimating(false);
       }, 100);
@@ -95,7 +85,8 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
       setTranslateX(-screenWidth);
       setTimeout(() => {
         setSlideList(prev => [...prev.slice(0, 2), prev[prev.length - 1]]);
-        setMonth(month === 12 ? 1 : month + 1);
+        setMonth(prev => (prev === 12 ? 1 : prev + 1));
+        setYear(prev => (month === 12 ? prev + 1 : prev));
         setTranslateX(0);
         setIsAnimating(false);
       }, 100);
@@ -105,7 +96,8 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
       setTranslateX(screenWidth);
       setTimeout(() => {
         setSlideList(prev => [prev[0], ...prev.slice(1, 3)]);
-        setMonth(month === 1 ? 12 : month - 1);
+        setMonth(prev => (prev === 1 ? 12 : prev - 1));
+        setYear(prev => (month === 1 ? prev - 1 : prev));
         setTranslateX(0);
         setIsAnimating(false);
       }, 100);

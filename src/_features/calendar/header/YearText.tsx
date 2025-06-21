@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import useCalendarStore from "@/_shared/store/calendar";
 
 interface Props {
@@ -5,7 +7,7 @@ interface Props {
 }
 
 export default function YearText({ slide }: Props) {
-  const { year, month } = useCalendarStore();
+  const { year, month, setYear } = useCalendarStore();
 
   const adjustedYear = () => {
     const currentMonth = month + slide;

@@ -1,5 +1,3 @@
-import Button from "@/_shared/ui/Button";
-
 interface Props {
   idx: number;
 }

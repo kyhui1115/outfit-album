@@ -1,5 +1,3 @@
-"use client";
-
 import dayjs from "dayjs";
 
 import useCalendarStore from "@/_shared/store/calendar";
