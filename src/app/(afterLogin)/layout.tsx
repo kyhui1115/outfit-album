@@ -6,10 +6,8 @@ interface Props {
 
 export default function Layout({ children }: Props) {
   return (
-    <div className="flex h-full w-full flex-col items-center">
-      <div className="flex h-full w-full items-center overflow-x-hidden">
-        {children}
-      </div>
+    <div className="flex h-full w-full flex-col">
+      <div className="flex h-full w-full justify-center">{children}</div>
       <TabBarList />
     </div>
   );

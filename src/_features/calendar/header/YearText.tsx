@@ -1,9 +1,27 @@
-"use client";
-
 import useCalendarStore from "@/_shared/store/calendar";
 
-export default function YearText() {
-  const { year } = useCalendarStore();
+interface Props {
+  slide: number;
+}
 
-  return <span className="absolute top-1 right-2 text-[10px]">{year}</span>;
+export default function YearText({ slide }: Props) {
+  const { year, month } = useCalendarStore();
+
+  const adjustedYear = () => {
+    const currentMonth = month + slide;
+
+    if (currentMonth === 0) {
+      return year - 1;
+    }
+
+    if (currentMonth === 13) {
+      return year + 1;
+    }
+
+    return year;
+  };
+
+  return (
+    <span className="absolute top-1 right-2 text-[10px]">{adjustedYear()}</span>
+  );
 }

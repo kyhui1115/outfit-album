@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
 import { create } from "zustand";
-import { createJSONStorage, persist } from "zustand/middleware";
 
 interface CalendarState {
   year: number;
@@ -16,25 +15,17 @@ interface CalendarState {
 
 const now = dayjs();
 
-const useCalendarStore = create<CalendarState>()(
-  persist(
-    set => ({
-      year: now.year(),
-      month: now.month() + 1,
-      day: now.date(),
+const useCalendarStore = create<CalendarState>()(set => ({
+  year: now.year(),
+  month: now.month() + 1,
+  day: now.date(),
 
-      setYear: year => set({ year }),
-      setMonth: month => set({ month }),
-      setDay: day => set({ day }),
+  setYear: year => set({ year }),
+  setMonth: month => set({ month }),
+  setDay: day => set({ day }),
 
-      reset: () =>
-        set({ year: now.year(), month: now.month() + 1, day: now.date() }),
-    }),
-    {
-      name: "calendar",
-      storage: createJSONStorage(() => sessionStorage),
-    },
-  ),
-);
+  reset: () =>
+    set({ year: now.year(), month: now.month() + 1, day: now.date() }),
+}));
 
 export default useCalendarStore;
