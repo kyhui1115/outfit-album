@@ -88,9 +88,9 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
 
     if (!dragging.current) return;
 
-    if (!isIgnoreClick) {
-      setIsIgnoreClick(true);
-    }
+    // if (!isIgnoreClick) {
+    //   setIsIgnoreClick(true);
+    // }
 
     const diff = e.touches[0].clientX - startX.current;
     setTranslateX(diff);
@@ -100,9 +100,9 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
     dragging.current = false;
     setIsAnimating(true);
 
-    if (isIgnoreClick) {
-      setTimeout(() => setIsIgnoreClick(false), 100);
-    }
+    // if (isIgnoreClick) {
+    //   setTimeout(() => setIsIgnoreClick(false), 100);
+    // }
 
     if (Math.abs(translateX) < screenWidth / 2) {
       setTranslateX(0);
