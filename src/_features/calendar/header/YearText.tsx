@@ -26,7 +26,7 @@ export default function YearText({ slide }: Props) {
 
   return (
     <span
-      className={`absolute top-1 right-2 ${isMobile() ? "text-[10px]" : "text-sm"}`}
+      className={`absolute ${isMobile() ? "top-1 right-2 text-[10px]" : "top-2 right-3 text-sm"}`}
     >
       {adjustedYear()}
     </span>
