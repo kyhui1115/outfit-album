@@ -1,3 +1,4 @@
+import { useIsMobile } from "@/_shared/hooks/useIsMobile";
 import useCalendarStore from "@/_shared/store/calendar";
 import useIsIgnoreClick from "@/_shared/store/isIgnoreClick";
 import useIsModal from "@/_shared/store/isModal";
@@ -8,6 +9,8 @@ interface Props {
 }
 
 export default function CalendarDayItemBodyButton({ date }: Props) {
+  const isMobile = useIsMobile();
+
   const { setDay } = useCalendarStore();
   const { setIsCalendarDayModal } = useIsModal();
   const { isIgnoreClick } = useIsIgnoreClick();
@@ -20,8 +23,9 @@ export default function CalendarDayItemBodyButton({ date }: Props) {
   };
 
   return (
-    <Button className="h-15 w-full" onClick={buttonHandler}>
-      <></>
-    </Button>
+    <Button
+      className={`${isMobile ? "h-[75%]" : "h-[79%]"} w-full`}
+      onClick={buttonHandler}
+    />
   );
 }

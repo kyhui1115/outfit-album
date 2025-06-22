@@ -1,13 +1,15 @@
-import { isMobile } from "@/_shared/utils/isMobile";
+import { useIsMobile } from "@/_shared/hooks/useIsMobile";
 
 interface Props {
   day: string;
 }
 
 export default function WeekDayItem({ day }: Props) {
+  const isMobile = useIsMobile();
+
   return (
     <div key={day} className="flex w-full justify-center">
-      <span className={`text-darkgray ${isMobile() ? "text-xs" : "text-sm"} `}>
+      <span className={`text-darkgray ${isMobile ? "text-xs" : "text-sm"} `}>
         {day}
       </span>
     </div>

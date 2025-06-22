@@ -1,11 +1,13 @@
+import { useIsMobile } from "@/_shared/hooks/useIsMobile";
 import useCalendarStore from "@/_shared/store/calendar";
-import { isMobile } from "@/_shared/utils/isMobile";
 
 interface Props {
   slide: number;
 }
 
 export default function MonthText({ slide }: Props) {
+  const isMobile = useIsMobile();
+
   const { month } = useCalendarStore();
 
   const adjustedMonth = () => {
@@ -24,7 +26,7 @@ export default function MonthText({ slide }: Props) {
 
   return (
     <div className="mb-4 flex w-full items-center justify-center">
-      <span className={`font-semibold ${isMobile() ? "" : "text-lg"}`}>
+      <span className={`font-semibold ${isMobile ? "" : "text-lg"}`}>
         {adjustedMonth()}
       </span>
     </div>

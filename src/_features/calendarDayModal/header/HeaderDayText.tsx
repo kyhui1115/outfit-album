@@ -1,13 +1,15 @@
 "use client";
 
+import { useIsMobile } from "@/_shared/hooks/useIsMobile";
 import useCalendarStore from "@/_shared/store/calendar";
-import { isMobile } from "@/_shared/utils/isMobile";
 
 export default function HeaderDayText() {
+  const isMobile = useIsMobile();
+
   const { day } = useCalendarStore();
 
   return (
-    <span className={`font-semibold ${isMobile() ? "text-xs" : "text-sm"}`}>
+    <span className={`font-semibold ${isMobile ? "text-xs" : "text-sm"}`}>
       {day}
     </span>
   );
