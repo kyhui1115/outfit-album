@@ -3,7 +3,7 @@
 import { IoClose } from "react-icons/io5";
 
 import useIsModal from "@/_shared/store/isModal";
-import usePreviewImageUrl from "@/_shared/store/preViewImageUrl";
+import usePreviewImageUrl from "@/_shared/store/previewImageUrl";
 import Button from "@/_shared/ui/Button";
 
 export default function CloseIconButotn() {

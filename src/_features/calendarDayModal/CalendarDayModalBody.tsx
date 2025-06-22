@@ -1,4 +1,4 @@
-import usePreviewImageUrl from "@/_shared/store/preViewImageUrl";
+import usePreviewImageUrl from "@/_shared/store/previewImageUrl";
 
 import AddIconButton from "./AddIconButton";
 import ImageContainer from "./ImageContainer";
