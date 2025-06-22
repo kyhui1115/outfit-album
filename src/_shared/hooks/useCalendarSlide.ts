@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 import useCalendarStore from "../store/calendar";
 import useIsIgnoreClick from "../store/isIgnoreClick";
+import { isPWA } from "../utils/isPWA";
 
 const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
   const { month, setMonth, setYear } = useCalendarStore();
@@ -17,6 +18,7 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
   const { isIgnoreClick, setIsIgnoreClick } = useIsIgnoreClick();
 
   const handleMouseDown = (e: React.MouseEvent) => {
+    if (isPWA()) return;
     e.preventDefault();
 
     dragging.current = true;
@@ -25,6 +27,7 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
+    if (isPWA()) return;
     e.preventDefault();
 
     if (!dragging.current) return;
@@ -38,6 +41,8 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
   };
 
   const handleMouseUp = () => {
+    if (isPWA()) return;
+
     dragging.current = false;
     setIsAnimating(true);
 
@@ -88,9 +93,9 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
 
     if (!dragging.current) return;
 
-    // if (!isIgnoreClick) {
-    //   setIsIgnoreClick(true);
-    // }
+    if (!isIgnoreClick) {
+      setIsIgnoreClick(true);
+    }
 
     const diff = e.touches[0].clientX - startX.current;
     setTranslateX(diff);
@@ -100,9 +105,9 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
     dragging.current = false;
     setIsAnimating(true);
 
-    // if (isIgnoreClick) {
-    //   setTimeout(() => setIsIgnoreClick(false), 100);
-    // }
+    if (isIgnoreClick) {
+      setTimeout(() => setIsIgnoreClick(false), 100);
+    }
 
     if (Math.abs(translateX) < screenWidth / 2) {
       setTranslateX(0);
