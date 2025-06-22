@@ -4,7 +4,7 @@ import { Poppins } from "next/font/google";
 import "@/_shared/style/globals.css";
 
 import Header from "@/_shared/ui/Header";
-import AppWrapper from "@/_shared/utils/AppWrapper";
+import PreventSwipeBackWrapper from "@/_shared/utils/PreventSwipeBackWrapper";
 import QueryProvider from "@/_shared/utils/queryProvider";
 
 const poppins = Poppins({
@@ -42,12 +42,12 @@ export default function RootLayout({
         className={`${poppins.variable} flex justify-center bg-gray-100 antialiased`}
       >
         <QueryProvider>
-          <AppWrapper>
+          <PreventSwipeBackWrapper>
             <div className="flex h-[100dvh] w-screen max-w-[600px] flex-col bg-white">
               <Header name="OUTFIT" />
               <div className="h-full w-full">{children}</div>
             </div>
-          </AppWrapper>
+          </PreventSwipeBackWrapper>
         </QueryProvider>
       </body>
     </html>
