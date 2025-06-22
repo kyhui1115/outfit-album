@@ -1,10 +1,12 @@
 import { BiPhotoAlbum } from "react-icons/bi";
 
+import useBlob from "@/_shared/store/blob";
 import usePreviewImageUrl from "@/_shared/store/previewImageUrl";
 import resizeImage from "@/_shared/utils/resizeImage";
 
 export default function AlbumIconButton() {
   const { setImageUrl } = usePreviewImageUrl();
+  const { setBlob } = useBlob();
 
   const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -14,7 +16,7 @@ export default function AlbumIconButton() {
 
       const result = await resizeImage(file);
 
-      console.log(result);
+      setBlob(result);
     }
   };
 

@@ -1,5 +1,5 @@
 import AlbumIconButton from "./AlbumIconButton";
-import CloseButton from "./Closebutton";
+import CloseButton from "./CloseButton";
 import ClosetIconButton from "./ClosetIconButton";
 
 export default function ImageSelectButtonContainer() {

@@ -7,12 +7,11 @@ import usePreviewImageUrl from "@/_shared/store/previewImageUrl";
 import Button from "@/_shared/ui/Button";
 
 export default function CloseIconButotn() {
-  const { setIsCalendarDayModal, setIsPictureSelectModal } = useIsModal();
+  const { reset } = useIsModal();
   const { setImageUrl } = usePreviewImageUrl();
 
   const buttonhandler = () => {
-    setIsCalendarDayModal(false);
-    setIsPictureSelectModal(false);
+    reset();
     setImageUrl("");
   };
 

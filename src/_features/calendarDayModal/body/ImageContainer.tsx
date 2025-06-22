@@ -10,12 +10,7 @@ export default function ImageContainer() {
   return (
     <div className="bg-beige-normal relative mt-[10%] flex h-[70%] w-[70%] items-center justify-center">
       {imageUrl ? (
-        <Image
-          src={imageUrl}
-          alt="preview"
-          fill
-          className="rounded-md object-contain"
-        />
+        <Image src={imageUrl} alt="preview" fill className="object-contain" />
       ) : (
         <ImageSelectContainer />
       )}
