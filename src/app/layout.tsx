@@ -3,7 +3,7 @@ import { Poppins } from "next/font/google";
 
 import "@/_shared/style/globals.css";
 
-import Header from "@/_shared/ui/Header";
+import AppContainer from "@/_features/appContainer/AppContainer";
 import PreventSwipeBackWrapper from "@/_shared/utils/PreventSwipeBackWrapper";
 import QueryProvider from "@/_shared/utils/queryProvider";
 
@@ -43,10 +43,7 @@ export default function RootLayout({
       >
         <QueryProvider>
           <PreventSwipeBackWrapper>
-            <div className="flex h-[100dvh] w-screen max-w-[760px] flex-col bg-white">
-              <Header name="OUTFIT" />
-              <div className="h-full w-full">{children}</div>
-            </div>
+            <AppContainer>{children}</AppContainer>
           </PreventSwipeBackWrapper>
         </QueryProvider>
       </body>
