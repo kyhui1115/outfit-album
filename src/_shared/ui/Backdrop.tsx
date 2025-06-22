@@ -1,7 +1,7 @@
 "use client";
 
 import useIsModal from "../store/isModal";
-import usePreviewImageUrl from "../store/preViewImageUrl";
+import usePreviewImageUrl from "../store/previewImageUrl";
 
 export default function BackDrop() {
   const { setIsCalendarDayModal, setIsPictureSelectModal } = useIsModal();

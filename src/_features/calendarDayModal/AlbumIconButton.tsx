@@ -1,6 +1,6 @@
 import { BiPhotoAlbum } from "react-icons/bi";
 
-import usePreviewImageUrl from "@/_shared/store/preViewImageUrl";
+import usePreviewImageUrl from "@/_shared/store/previewImageUrl";
 
 export default function AlbumIconButton() {
   const { setImageUrl } = usePreviewImageUrl();

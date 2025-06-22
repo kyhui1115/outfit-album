@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import usePreviewImageUrl from "@/_shared/store/preViewImageUrl";
+import usePreviewImageUrl from "@/_shared/store/previewImageUrl";
 
 import ImageSelectContainer from "./ImageSelectContainer";
 
