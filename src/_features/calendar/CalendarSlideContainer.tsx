@@ -1,3 +1,5 @@
+"use client";
+
 import { Dispatch, ReactNode, SetStateAction } from "react";
 
 import useCalendarSlide from "@/_shared/hooks/useCalendarSlide";

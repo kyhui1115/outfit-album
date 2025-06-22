@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 import useCalendarStore from "../store/calendar";
+import useIsIgnoreClick from "../store/isIgnoreClick";
 
 const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
   const { month, setMonth, setYear } = useCalendarStore();
@@ -13,14 +14,25 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
   const startX = useRef(0);
   const dragging = useRef(false);
 
+  const { isIgnoreClick, setIsIgnoreClick } = useIsIgnoreClick();
+
   const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+
     dragging.current = true;
     setIsAnimating(false);
     startX.current = e.clientX - translateX;
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
+    e.preventDefault();
+
     if (!dragging.current) return;
+
+    if (!isIgnoreClick) {
+      setIsIgnoreClick(true);
+    }
+
     const diff = e.clientX - startX.current;
     setTranslateX(diff);
   };
@@ -28,6 +40,10 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
   const handleMouseUp = () => {
     dragging.current = false;
     setIsAnimating(true);
+
+    if (isIgnoreClick) {
+      setTimeout(() => setIsIgnoreClick(false), 100);
+    }
 
     if (Math.abs(translateX) < screenWidth / 2) {
       setTranslateX(0);
@@ -60,13 +76,22 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
+    e.preventDefault();
+
     dragging.current = true;
     setIsAnimating(false);
     startX.current = e.touches[0].clientX;
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
+    e.preventDefault();
+
     if (!dragging.current) return;
+
+    if (!isIgnoreClick) {
+      setIsIgnoreClick(true);
+    }
+
     const diff = e.touches[0].clientX - startX.current;
     setTranslateX(diff);
   };
@@ -74,6 +99,10 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
   const handleTouchEnd = () => {
     dragging.current = false;
     setIsAnimating(true);
+
+    if (isIgnoreClick) {
+      setTimeout(() => setIsIgnoreClick(false), 100);
+    }
 
     if (Math.abs(translateX) < screenWidth / 2) {
       setTranslateX(0);
