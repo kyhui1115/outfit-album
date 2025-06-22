@@ -20,7 +20,7 @@ export default function CalendarDayItemBodyButton({ date }: Props) {
   };
 
   return (
-    <Button className="h-full w-full" onClick={buttonHandler}>
+    <Button className="h-15 w-full" onClick={buttonHandler}>
       <></>
     </Button>
   );
