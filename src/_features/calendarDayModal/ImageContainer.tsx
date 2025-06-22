@@ -1,14 +1,24 @@
-import useIsModal from "@/_shared/store/isModal";
+import Image from "next/image";
 
-import PictureSelectContainer from "./PictureSelectContainer";
-import PlusButton from "./PlusButton";
+import usePreviewImageUrl from "@/_shared/store/preViewImageUrl";
+
+import ImageSelectContainer from "./ImageSelectContainer";
 
 export default function ImageContainer() {
-  const { isPictureSelectModal } = useIsModal();
+  const { imageUrl } = usePreviewImageUrl();
 
   return (
-    <div className="bg-beige-normal mt-[6%] flex h-[70%] w-[88%] items-center justify-center rounded-md">
-      {isPictureSelectModal ? <PictureSelectContainer /> : <PlusButton />}
+    <div className="bg-beige-normal relative mt-[10%] flex h-[70%] w-[70%] items-center justify-center">
+      {imageUrl ? (
+        <Image
+          src={imageUrl}
+          alt="preview"
+          fill
+          className="rounded-md object-contain"
+        />
+      ) : (
+        <ImageSelectContainer />
+      )}
     </div>
   );
 }

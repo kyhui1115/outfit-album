@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-interface CalendarState {
+interface State {
   isIgnoreClick: boolean;
 
   setIsIgnoreClick: (
@@ -8,7 +8,7 @@ interface CalendarState {
   ) => void;
 }
 
-const useIsIgnoreClick = create<CalendarState>()(set => ({
+const useIsIgnoreClick = create<State>()(set => ({
   isIgnoreClick: false,
 
   setIsIgnoreClick: isIgnoreClick =>

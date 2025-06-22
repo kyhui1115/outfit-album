@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-interface CalendarState {
+interface State {
   isCalendarDayModal: boolean;
   isPictureSelectModal: boolean;
 
@@ -12,7 +12,7 @@ interface CalendarState {
   ) => void;
 }
 
-const useIsModal = create<CalendarState>()(set => ({
+const useIsModal = create<State>()(set => ({
   isCalendarDayModal: false,
   isPictureSelectModal: false,
 

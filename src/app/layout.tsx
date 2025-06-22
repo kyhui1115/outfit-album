@@ -43,7 +43,7 @@ export default function RootLayout({
       >
         <QueryProvider>
           <PreventSwipeBackWrapper>
-            <div className="flex h-[100dvh] w-screen max-w-[600px] flex-col bg-white">
+            <div className="flex h-[100dvh] w-screen max-w-[760px] flex-col bg-white">
               <Header name="OUTFIT" />
               <div className="h-full w-full">{children}</div>
             </div>

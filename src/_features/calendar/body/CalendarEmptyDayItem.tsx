@@ -1,3 +1,5 @@
+import { isMobile } from "@/_shared/utils/isMobile";
+
 interface Props {
   idx: number;
 }
@@ -5,7 +7,7 @@ interface Props {
 export default function CalendarEmptyDayItem({ idx }: Props) {
   return (
     <div
-      className={`h-[80px] w-full border-b ${(idx + 1) % 7 === 0 ? "" : "border-r"} bg-beige-normal`}
+      className={`w-full border-b ${isMobile() ? "h-[80px]" : "h-[115px]"} ${(idx + 1) % 7 === 0 ? "" : "border-r"} bg-beige-normal`}
     />
   );
 }

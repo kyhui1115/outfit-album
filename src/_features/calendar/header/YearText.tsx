@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 
 import useCalendarStore from "@/_shared/store/calendar";
+import { isMobile } from "@/_shared/utils/isMobile";
 
 interface Props {
   slide: number;
@@ -24,6 +25,10 @@ export default function YearText({ slide }: Props) {
   };
 
   return (
-    <span className="absolute top-1 right-2 text-[10px]">{adjustedYear()}</span>
+    <span
+      className={`absolute top-1 right-2 ${isMobile() ? "text-[10px]" : "text-sm"}`}
+    >
+      {adjustedYear()}
+    </span>
   );
 }

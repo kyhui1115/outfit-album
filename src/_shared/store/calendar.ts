@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { create } from "zustand";
 
-interface CalendarState {
+interface State {
   year: number;
   month: number;
   day: number;
@@ -15,7 +15,7 @@ interface CalendarState {
 
 const now = dayjs();
 
-const useCalendarStore = create<CalendarState>()(set => ({
+const useCalendarStore = create<State>()(set => ({
   year: now.year(),
   month: now.month() + 1,
   day: now.date(),
