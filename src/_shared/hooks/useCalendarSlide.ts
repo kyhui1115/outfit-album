@@ -50,7 +50,7 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
       setTimeout(() => setIsIgnoreClick(false), 100);
     }
 
-    if (Math.abs(translateX) < screenWidth / 2) {
+    if (Math.abs(translateX) < screenWidth / 4) {
       setTranslateX(0);
 
       setTimeout(() => setIsAnimating(false), 100);
@@ -109,7 +109,7 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
       setTimeout(() => setIsIgnoreClick(false), 100);
     }
 
-    if (Math.abs(translateX) < screenWidth / 2) {
+    if (Math.abs(translateX) < screenWidth / 4) {
       setTranslateX(0);
       setTimeout(() => setIsAnimating(false), 100);
       return;
