@@ -1,6 +1,6 @@
 {
-  "name": "Outfit Album",
-  "short_name": "OUTFIT",
+  "name": "archive",
+  "short_name": "archive",
   "description": "달력과 앨범을 통해 나의 아웃핏을 관리하세요",
   "scope": "/",
   "start_url": "/",
