@@ -2,13 +2,13 @@
 
 import { TbPhotoEdit } from "react-icons/tb";
 
-import useImageUrls from "@/_shared/store/previewImageUrl";
+import useImageUrls from "@/_shared/store/Image";
 import IconButton from "@/_shared/ui/IconButton";
 
 export default function EditButton() {
-  const { setImage } = useImageUrls();
+  const { reset } = useImageUrls();
   const editButtonHandler = () => {
-    setImage(null);
+    reset();
   };
 
   return (
