@@ -1,15 +1,24 @@
+import { StaticImageData } from "next/image";
 import { create } from "zustand";
 
 interface State {
-  imageUrl: string;
+  image: StaticImageData | string | null;
+  previewImage: StaticImageData | string | null;
 
-  setImageUrl: (imageUrl: string) => void;
+  setImage: (image: StaticImageData | string | null) => void;
+  setPreviewImage: (previewImage: StaticImageData | string | null) => void;
+
+  reset: () => void;
 }
 
-const usePreviewImageUrl = create<State>(set => ({
-  imageUrl: "",
+const useImageUrls = create<State>(set => ({
+  image: null,
+  previewImage: null,
 
-  setImageUrl: imageUrl => set({ imageUrl }),
+  setImage: image => set({ image }),
+  setPreviewImage: previewImage => set({ previewImage }),
+
+  reset: () => set({ image: null, previewImage: null }),
 }));
 
-export default usePreviewImageUrl;
+export default useImageUrls;

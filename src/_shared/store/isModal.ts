@@ -3,7 +3,7 @@ import { create } from "zustand";
 interface State {
   isCalendarDayModal: boolean;
   isPictureSelectModal: boolean;
-  isConfirmModal: boolean;
+  isAlbumModal: boolean;
 
   setIsCalendarDayModal: (
     isCalendarDayModal: boolean | ((prev: boolean) => boolean),
@@ -11,8 +11,9 @@ interface State {
   setIsPictureSelectModal: (
     isPictureSelectModal: boolean | ((prev: boolean) => boolean),
   ) => void;
-  setIsConfirmModal: (
-    isConfirmModal: boolean | ((prev: boolean) => boolean),
+
+  setIsAlbumModal: (
+    isAlbumModal: boolean | ((prev: boolean) => boolean),
   ) => void;
 
   reset: () => void;
@@ -21,7 +22,7 @@ interface State {
 const useIsModal = create<State>()(set => ({
   isCalendarDayModal: false,
   isPictureSelectModal: false,
-  isConfirmModal: false,
+  isAlbumModal: false,
 
   setIsCalendarDayModal: isCalendarDayModal =>
     set(state => ({
@@ -37,19 +38,19 @@ const useIsModal = create<State>()(set => ({
           ? isPictureSelectModal(state.isPictureSelectModal)
           : isPictureSelectModal,
     })),
-  setIsConfirmModal: isConfirmModal =>
+  setIsAlbumModal: isAlbumModal =>
     set(state => ({
-      isConfirmModal:
-        typeof isConfirmModal === "function"
-          ? isConfirmModal(state.isConfirmModal)
-          : isConfirmModal,
+      isAlbumModal:
+        typeof isAlbumModal === "function"
+          ? isAlbumModal(state.isAlbumModal)
+          : isAlbumModal,
     })),
 
   reset: () =>
     set(() => ({
       isCalendarDayModal: false,
       isPictureSelectModal: false,
-      isConfirmModal: false,
+      isAlbumModal: false,
     })),
 }));
 
