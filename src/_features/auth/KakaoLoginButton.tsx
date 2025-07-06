@@ -21,7 +21,7 @@ export default function KakaoLoginButton() {
         width="20"
         height="20"
       />
-      <span className="font-semibold">Login with Kakao</span>
+      <span className="font-semibold text-gray-900">Login with Kakao</span>
     </Button>
   );
 }
