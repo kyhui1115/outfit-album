@@ -6,10 +6,11 @@ interface Props {
 
 export default function CalendarEmptyDayItem({ idx }: Props) {
   const isMobile = useIsMobile();
-
   return (
     <div
-      className={`w-full border-b ${isMobile ? "h-[80px]" : "h-[115px]"} ${(idx + 1) % 7 === 0 ? "" : "border-r"} bg-beige-normal`}
-    />
+      className={`border-beige-300 h-full w-full border-t ${(idx + 1) % 7 === 0 ? "" : "border-beige-300 border-r"} bg-beige-100`}
+    >
+      <div className={`-full ${isMobile ? "h-5" : "h-6"}`} />
+    </div>
   );
 }
