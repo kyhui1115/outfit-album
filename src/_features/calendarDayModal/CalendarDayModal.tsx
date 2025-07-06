@@ -1,7 +1,7 @@
 "use client";
 
 import { useIsMobile } from "@/_shared/hooks/useIsMobile";
-import useImageUrls from "@/_shared/store/previewImageUrl";
+import useImageUrls from "@/_shared/store/Image";
 import { isPWA } from "@/_shared/utils/isPWA";
 
 import CalendarDayModalBody from "./body/CalendarDayModalBody";
@@ -11,7 +11,7 @@ import CalendarDayModalHeader from "./header/CalendarDayModalHeader";
 
 export default function CalendarDayModal() {
   const isMobile = useIsMobile();
-  const { image, previewImage } = useImageUrls();
+  const { image, id } = useImageUrls();
 
   return (
     <>
@@ -25,8 +25,8 @@ export default function CalendarDayModal() {
       <div
         className={`absolute z-10 ${isMobile && !isPWA() ? "bottom-[3%]" : "bottom-[15%]"} flex items-center justify-center gap-2`}
       >
-        {image && <EditButton />}
-        {previewImage && (
+        {id && <EditButton />}
+        {image && (
           <>
             <CheckButton />
           </>
