@@ -2,9 +2,39 @@
 
 @theme {
   --color-darkgray: #404040;
-  --color-beige-light: #fbfaf9;
-  --color-beige-normal: #dbd5cf;
+  --color-beige-100: #fbfaf9;
+  --color-beige-200: #f5f3f0;
+  --color-beige-300: #efebe7;
+  --color-beige-400: #e9e3de;
+  --color-beige-500: #e3dbd5;
+
   --color-yellow-normal: #fce4a5;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease-in;
 }
 
 html {
