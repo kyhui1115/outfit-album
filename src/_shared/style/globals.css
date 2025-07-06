@@ -1,14 +1,51 @@
 @import "tailwindcss";
 
+html {
+  color: #565656;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+body {
+  overflow-y: auto;
+  padding-top: env(safe-area-inset-top);
+}
+
 @theme {
-  --color-darkgray: #404040;
+  --color-gray-100: #f4f4f4;
+  --color-gray-200: #e8e8e8;
+  --color-gray-300: #dadada;
+  --color-gray-400: #c4c4c4;
+  --color-gray-500: #a8a8a8;
+  --color-gray-600: #8c8c8c;
+  --color-gray-700: #6c6c6c;
+  --color-gray-800: #565656;
+  --color-gray-900: #404040;
+
+  --color-beige-50: #fefefe;
   --color-beige-100: #fbfaf9;
   --color-beige-200: #f5f3f0;
   --color-beige-300: #efebe7;
   --color-beige-400: #e9e3de;
   --color-beige-500: #e3dbd5;
+  --color-beige-600: #d9d1ca;
+  --color-beige-700: #cfc7c0;
+  --color-beige-800: #c5bdb6;
+  --color-beige-900: #bbb3ac;
 
-  --color-yellow-normal: #fce4a5;
+  --color-yellow-100: #fef9e7;
+  --color-yellow-200: #fef2d1;
+  --color-yellow-300: #fdebbb;
+  --color-yellow-400: #fce4a5;
+  --color-yellow-500: #fbdd8f;
+  --color-yellow-600: #fad679;
+  --color-yellow-700: #f9cf63;
+  --color-yellow-800: #f8c84d;
+  --color-yellow-900: #f7c137;
+
+  --color-border-default: #efebe7;
 }
 
 @keyframes slide-up {
@@ -35,17 +72,4 @@
 
 .animate-slide-down {
   animation: slide-down 0.3s ease-in;
-}
-
-html {
-  color: #404040;
-  overscroll-behavior: none;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-}
-
-body {
-  overflow-y: auto;
-  padding-top: env(safe-area-inset-top);
 }
