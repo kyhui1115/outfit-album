@@ -3,8 +3,8 @@
 import { useEffect } from "react";
 import { IoClose } from "react-icons/io5";
 
+import useImageUrls from "@/_shared/store/Image";
 import useIsModal from "@/_shared/store/isModal";
-import useImageUrls from "@/_shared/store/previewImageUrl";
 import IconButton from "@/_shared/ui/IconButton";
 
 export default function CloseButton() {
