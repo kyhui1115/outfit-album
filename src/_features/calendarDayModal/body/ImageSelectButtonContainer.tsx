@@ -1,15 +1,11 @@
 import AlbumIconButton from "./AlbumIconButton";
-import CloseButton from "./CloseButton";
 import ClosetIconButton from "./ClosetIconButton";
 
 export default function ImageSelectButtonContainer() {
   return (
-    <div className="flex h-[24%] w-[50%] flex-col border bg-white">
-      <div className="flex h-[65%] w-full">
-        <AlbumIconButton />
-        <ClosetIconButton />
-      </div>
-      <CloseButton />
+    <div className="border-beige-500 flex h-[15%] w-[50%] rounded-md border bg-white">
+      <AlbumIconButton />
+      <ClosetIconButton />
     </div>
   );
 }

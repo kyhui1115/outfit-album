@@ -1,16 +1,16 @@
 "use client";
 
+import { IoClose } from "react-icons/io5";
+
 import useIsModal from "@/_shared/store/isModal";
-import Button from "@/_shared/ui/Button";
+import IconButton from "@/_shared/ui/IconButton";
 
 export default function CloseButton() {
   const { setIsPictureSelectModal } = useIsModal();
+
   return (
-    <Button
-      className="flex h-[35%] w-full items-center justify-center border-t bg-rose-200 text-xs font-semibold"
-      onClick={() => setIsPictureSelectModal(false)}
-    >
-      close
-    </Button>
+    <IconButton onClick={() => setIsPictureSelectModal(false)} className="mr-1">
+      <IoClose />
+    </IconButton>
   );
 }
