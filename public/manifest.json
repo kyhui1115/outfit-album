@@ -1,12 +1,12 @@
 {
-  "name": "archive",
-  "short_name": "archive",
-  "description": "달력과 앨범을 통해 나의 아웃핏을 관리하세요",
+  "name": "archive:",
+  "short_name": "archive:",
+  "description": "archive:",
   "scope": "/",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#f4f1ed",
+  "theme_color": "#fbfaf9",
   "background_color": "#ffffff",
   "icons": [
     {
