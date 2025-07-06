@@ -28,7 +28,7 @@ export default function CalendarSlideContainer({
   return (
     <div
       ref={screenRef}
-      className={`flex h-full w-full shrink-0 justify-center ${isAnimating ? "duration-100" : "duration-0"} px-2 pb-8`}
+      className={`flex h-full w-full shrink-0 justify-center ${isAnimating ? "duration-100" : "duration-0"}`}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}

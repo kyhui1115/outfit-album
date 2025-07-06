@@ -8,7 +8,7 @@ interface Props {
 export default function Calendar({ slide }: Props) {
   return (
     <div
-      className={`border-beige-300 z-0 mx-3 flex h-full w-full shrink-0 flex-col border bg-white`}
+      className={`border-border-default z-0 mx-3 flex h-full w-full shrink-0 flex-col rounded-t-lg border-x border-b bg-white`}
     >
       <CalendarHeader slide={slide} />
       <CalendarBody slide={slide} />
