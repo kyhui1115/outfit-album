@@ -1,7 +1,7 @@
 "use client";
 
+import useImageUrls from "../../store/Image";
 import useIsModal from "../../store/isModal";
-import useImageUrls from "../../store/previewImageUrl";
 
 interface Props {
   onClose: () => void;
