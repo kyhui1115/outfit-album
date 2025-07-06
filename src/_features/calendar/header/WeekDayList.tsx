@@ -4,7 +4,7 @@ import WeekDayItem from "./WeekDayItem";
 
 export default function WeekDayList() {
   return (
-    <div className="absolute bottom-1 flex w-full">
+    <div className="absolute bottom-1 flex w-full font-semibold">
       {DIC.weekDayList.map(day => (
         <WeekDayItem key={day} day={day} />
       ))}

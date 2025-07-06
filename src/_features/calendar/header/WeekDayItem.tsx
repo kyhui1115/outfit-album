@@ -9,9 +9,7 @@ export default function WeekDayItem({ day }: Props) {
 
   return (
     <div key={day} className="flex w-full justify-center">
-      <span className={`text-darkgray ${isMobile ? "text-xs" : "text-sm"} `}>
-        {day}
-      </span>
+      <span className={`${isMobile ? "text-xs" : "text-sm"} `}>{day}</span>
     </div>
   );
 }
