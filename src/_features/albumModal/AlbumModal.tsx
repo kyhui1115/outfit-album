@@ -81,7 +81,6 @@ export default function AlbumModal() {
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
     >
-      {/* 드래그 핸들 영역 */}
       <div className="flex justify-center py-2.5">
         <div className="h-1 w-10 rounded-full bg-gray-300"></div>
       </div>
