@@ -8,7 +8,7 @@ export default function CalendarEmptyDayItem({ idx }: Props) {
   const isMobile = useIsMobile();
   return (
     <div
-      className={`border-beige-300 h-full w-full border-t ${(idx + 1) % 7 === 0 ? "" : "border-beige-300 border-r"} bg-beige-100`}
+      className={`border-border-default h-full w-full border-t ${(idx + 1) % 7 === 0 ? "" : "border-border-default border-r"} bg-beige-100`}
     >
       <div className={`-full ${isMobile ? "h-5" : "h-6"}`} />
     </div>

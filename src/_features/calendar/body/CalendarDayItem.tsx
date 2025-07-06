@@ -9,17 +9,16 @@ interface Props {
   idx: number;
   date: number;
   imageUrl: StaticImageData | null;
+  id: string;
 }
 
-export default function CalendarDayItem({ idx, date, imageUrl }: Props) {
-  const isMobile = useIsMobile();
-
+export default function CalendarDayItem({ idx, date, imageUrl, id }: Props) {
   return (
     <div
-      className={`border-beige-300 h-full w-full border-t ${(idx + 1) % 7 === 0 ? "" : "border-beige-300 border-r"}`}
+      className={`border-border-default h-full w-full border-t ${(idx + 1) % 7 === 0 ? "" : "border-border-default border-r"}`}
     >
       <CalendarDayItemHeader date={date} imageUrl={imageUrl} />
-      <CalendarDayItemBodyButton date={date} imageUrl={imageUrl} />
+      <CalendarDayItemBodyButton date={date} imageUrl={imageUrl} id={id} />
     </div>
   );
 }

@@ -12,7 +12,7 @@ export default function CalendarDayItemHeader({ date, imageUrl }: Props) {
 
   return (
     <div
-      className={`border-beige-300 flex h-[19%] w-full items-center justify-end border-b ${imageUrl ? "bg-yellow-normal" : "bg-beige-100"}`}
+      className={`border-border-default flex h-[19%] w-full items-center justify-end border-b ${imageUrl ? "bg-yellow-300" : "bg-beige-100"}`}
     >
       <span className={`${isMobile ? "mr-1 text-[10px]" : "mr-2 text-sm"}`}>
         {date}

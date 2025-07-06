@@ -2,30 +2,35 @@ import Image, { StaticImageData } from "next/image";
 
 import { useIsMobile } from "@/_shared/hooks/useIsMobile";
 import useCalendarStore from "@/_shared/store/calendar";
+import useImage from "@/_shared/store/Image";
 import useIsIgnoreClick from "@/_shared/store/isIgnoreClick";
 import useIsModal from "@/_shared/store/isModal";
-import useImageUrls from "@/_shared/store/previewImageUrl";
 import Button from "@/_shared/ui/Button";
 
 interface Props {
   date: number;
   imageUrl: StaticImageData | null;
+  id: string;
 }
 
-export default function CalendarDayItemBodyButton({ date, imageUrl }: Props) {
+export default function CalendarDayItemBodyButton({
+  date,
+  imageUrl,
+  id,
+}: Props) {
   const isMobile = useIsMobile();
 
   const { setDay } = useCalendarStore();
   const { setIsCalendarDayModal } = useIsModal();
   const { isIgnoreClick } = useIsIgnoreClick();
-  const { setImage } = useImageUrls();
+  const { setId } = useImage();
 
   const buttonHandler = () => {
     if (isIgnoreClick) return;
 
-    setImage(imageUrl);
     setDay(date);
     setIsCalendarDayModal(true);
+    setId(id);
   };
 
   return (
@@ -39,7 +44,8 @@ export default function CalendarDayItemBodyButton({ date, imageUrl }: Props) {
           alt=""
           fill
           className={`rounded-lg object-cover ${isMobile ? "p-0.5" : "p-1"}`}
-          priority
+          loading="lazy"
+          sizes="(max-width: 768px) 50vw, 25vw"
         />
       )}
     </Button>
