@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} flex justify-center bg-gray-100 antialiased`}
+        className={`${poppins.variable} bg-beige-50 flex justify-center antialiased`}
       >
         <QueryProvider>
           <PreventSwipeBackWrapper>
