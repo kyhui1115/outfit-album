@@ -1,6 +1,5 @@
 import TabBarList from "@/_features/tabBar/TabBarList";
 import Header from "@/_shared/ui/Header";
-import CalendarDayModalContainer from "@/_shared/ui/modal/Modal";
 
 interface Props {
   children: React.ReactNode;
