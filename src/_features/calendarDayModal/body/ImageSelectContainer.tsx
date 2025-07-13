@@ -7,7 +7,7 @@ export default function ImageSelect() {
   const { isPictureSelectModal } = useIsModal();
 
   return (
-    <div className="bg-beige-200 flex h-full w-full items-center justify-center rounded-md">
+    <div className="bg-beige-100 flex h-full w-full items-center justify-center rounded-md">
       {isPictureSelectModal ? <ImageSelectButtonContainer /> : <AddButton />}
     </div>
   );
