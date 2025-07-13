@@ -11,6 +11,7 @@ import Header from "./Header";
 export default function SelectedImageContainer() {
   const [zoomed, setZoomed] = useState(false);
   const [show, setShow] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
 
   const { albumImage } = useImage();
   const { isAlbumImage } = useIsModal();
@@ -31,9 +32,13 @@ export default function SelectedImageContainer() {
     <>
       {show && (
         <div className="absolute top-0 left-0 z-10 flex h-full w-full flex-col items-center">
-          <Background zoomed={zoomed} />
+          <Background zoomed={zoomed} isDragging={isDragging} />
           <Header zoomed={zoomed} />
-          <Body albumImage={albumImage} zoomed={zoomed} />
+          <Body
+            albumImage={albumImage}
+            zoomed={zoomed}
+            setIsDragging={setIsDragging}
+          />
           <Bottom />
         </div>
       )}
