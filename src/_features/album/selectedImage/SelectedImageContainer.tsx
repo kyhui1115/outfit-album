@@ -32,7 +32,7 @@ export default function SelectedImageContainer() {
       {show && (
         <div className="absolute top-0 left-0 z-10 flex h-full w-full flex-col items-center">
           <Background zoomed={zoomed} />
-          <Header />
+          <Header zoomed={zoomed} />
           <Body albumImage={albumImage} zoomed={zoomed} />
           <Bottom />
         </div>
