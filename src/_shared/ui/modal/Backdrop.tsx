@@ -1,10 +1,7 @@
 "use client";
 
-import useImageUrls from "../../store/Image";
-import useIsModal from "../../store/isModal";
-
 interface Props {
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 export default function Backdrop({ onClose }: Props) {

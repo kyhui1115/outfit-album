@@ -4,7 +4,7 @@ import Backdrop from "@/_shared/ui/modal/Backdrop";
 
 interface Props {
   open: boolean;
-  onClose: () => void;
+  onClose?: () => void;
   children: React.ReactNode;
 }
 
