@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import useIsModal from "@/_shared/store/isModal";
 
 import AlbumImageList from "../album/AlbumImageList";
+import ModalDragHandle from "./ModalDragHandle";
 
 export default function AlbumModal() {
   const { setIsAlbumModal } = useIsModal();
@@ -81,10 +82,7 @@ export default function AlbumModal() {
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
     >
-      <div className="flex justify-center py-2.5">
-        <div className="h-1 w-10 rounded-full bg-gray-300"></div>
-      </div>
-
+      <ModalDragHandle />
       <AlbumImageList />
     </div>
   );
