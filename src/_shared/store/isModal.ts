@@ -5,6 +5,7 @@ interface State {
   isPictureSelectModal: boolean;
   isAlbumModal: boolean;
   isImage: boolean;
+  isAlbumImage: boolean;
 
   setIsCalendarDayModal: (
     isCalendarDayModal: boolean | ((prev: boolean) => boolean),
@@ -17,6 +18,7 @@ interface State {
     isAlbumModal: boolean | ((prev: boolean) => boolean),
   ) => void;
   setIsImage: (isImage: boolean) => void;
+  setIsAlbumImage: (isAlbumImage: boolean) => void;
 
   reset: () => void;
 }
@@ -26,6 +28,7 @@ const useIsModal = create<State>()(set => ({
   isPictureSelectModal: false,
   isAlbumModal: false,
   isImage: false,
+  isAlbumImage: false,
 
   setIsCalendarDayModal: isCalendarDayModal =>
     set(state => ({
@@ -52,6 +55,10 @@ const useIsModal = create<State>()(set => ({
     set(() => ({
       isImage,
     })),
+  setIsAlbumImage: isAlbumImage =>
+    set(() => ({
+      isAlbumImage,
+    })),
 
   reset: () =>
     set(() => ({
@@ -59,6 +66,7 @@ const useIsModal = create<State>()(set => ({
       isPictureSelectModal: false,
       isAlbumModal: false,
       isImage: false,
+      isAlbumImage: false,
     })),
 }));
 
