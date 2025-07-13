@@ -5,7 +5,7 @@ import Button from "@/_shared/ui/Button";
 
 interface Props {
   children: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   className?: string;
 }
 
