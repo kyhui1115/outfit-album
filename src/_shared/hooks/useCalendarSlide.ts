@@ -3,8 +3,13 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import useCalendarStore from "../store/calendar";
 import useIsIgnoreClick from "../store/isIgnoreClick";
 import { isPWA } from "../utils/isPWA";
+import { useIsMobile } from "./useIsMobile";
+
+const SLIDE_DURATION = 300;
 
 const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
+  const isMobile = useIsMobile();
+
   const { month, setMonth, setYear } = useCalendarStore();
 
   const [translateX, setTranslateX] = useState(0);
@@ -47,13 +52,13 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
     setIsAnimating(true);
 
     if (isIgnoreClick) {
-      setTimeout(() => setIsIgnoreClick(false), 100);
+      setTimeout(() => setIsIgnoreClick(false), SLIDE_DURATION);
     }
 
     if (Math.abs(translateX) < screenWidth / 4) {
       setTranslateX(0);
 
-      setTimeout(() => setIsAnimating(false), 100);
+      setTimeout(() => setIsAnimating(false), SLIDE_DURATION);
       return;
     }
 
@@ -65,7 +70,7 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
         setYear(prev => (month === 12 ? prev + 1 : prev));
         setTranslateX(0);
         setIsAnimating(false);
-      }, 100);
+      }, SLIDE_DURATION);
     }
 
     if (translateX > 0) {
@@ -76,7 +81,7 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
         setYear(prev => (month === 1 ? prev - 1 : prev));
         setTranslateX(0);
         setIsAnimating(false);
-      }, 100);
+      }, SLIDE_DURATION);
     }
   };
 
@@ -106,12 +111,12 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
     setIsAnimating(true);
 
     if (isIgnoreClick) {
-      setTimeout(() => setIsIgnoreClick(false), 100);
+      setTimeout(() => setIsIgnoreClick(false), SLIDE_DURATION);
     }
 
     if (Math.abs(translateX) < screenWidth / 4) {
       setTranslateX(0);
-      setTimeout(() => setIsAnimating(false), 100);
+      setTimeout(() => setIsAnimating(false), SLIDE_DURATION);
       return;
     }
 
@@ -123,7 +128,7 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
         setYear(prev => (month === 12 ? prev + 1 : prev));
         setTranslateX(0);
         setIsAnimating(false);
-      }, 100);
+      }, SLIDE_DURATION);
     }
 
     if (translateX > 0) {
@@ -134,19 +139,21 @@ const useCalendarSlide = (setSlideList: Dispatch<SetStateAction<number[]>>) => {
         setYear(prev => (month === 1 ? prev - 1 : prev));
         setTranslateX(0);
         setIsAnimating(false);
-      }, 100);
+      }, SLIDE_DURATION);
     }
   };
 
   useEffect(() => {
-    setScreenWidth((screenRef.current?.clientWidth || 0) / 0.96);
-  }, [screenRef]);
+    const EMPTY_SPACE = isPWA() || isMobile ? 0.942 : 0.96;
+    setScreenWidth((screenRef.current?.clientWidth || 0) / EMPTY_SPACE);
+  }, [screenRef, isMobile]);
 
   return {
     translateX,
     screenWidth,
     isAnimating,
     screenRef,
+    slideDuration: SLIDE_DURATION,
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,

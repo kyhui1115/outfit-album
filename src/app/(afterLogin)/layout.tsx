@@ -1,5 +1,6 @@
-import TabBarList from "@/_features/tabBar/TabBarList";
 import Header from "@/_shared/ui/Header";
+
+import TabBarList from "../_components/tabBar/TabBarList";
 
 interface Props {
   children: React.ReactNode;

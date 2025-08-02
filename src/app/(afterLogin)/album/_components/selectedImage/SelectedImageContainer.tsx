@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 
 import useImage from "@/_shared/store/Image";
 import useIsModal from "@/_shared/store/isModal";
+import Header from "@/_shared/ui/Header";
 
 import Background from "./Background";
 import Body from "./Body";
 import Bottom from "./Bottom";
-import Header from "./Header";
 
 export default function SelectedImageContainer() {
   const [zoomed, setZoomed] = useState(false);
@@ -33,7 +33,7 @@ export default function SelectedImageContainer() {
       {show && (
         <div className="absolute top-0 left-0 z-10 flex h-full w-full flex-col items-center">
           <Background zoomed={zoomed} isDragging={isDragging} />
-          <Header zoomed={zoomed} />
+          <Header name="archive:" />
           <Body
             albumImage={albumImage}
             zoomed={zoomed}

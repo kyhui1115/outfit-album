@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-import Calendar from "@/_features/calendar/Calendar";
-import CalendarSlideContainer from "@/_features/calendar/CalendarSlideContainer";
+import Calendar from "@/app/(afterLogin)/calendar/_components/calendar/Calendar";
+import CalendarSlideContainer from "@/app/(afterLogin)/calendar/_components/container/CalendarSlideContainer";
 
 export default function Page() {
   const [slideList, setSlideList] = useState<number[]>([-1, 0, 1]);

@@ -17,6 +17,7 @@ export default function CalendarSlideContainer({
     translateX,
     screenRef,
     isAnimating,
+    slideDuration,
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
@@ -28,7 +29,7 @@ export default function CalendarSlideContainer({
   return (
     <div
       ref={screenRef}
-      className={`flex h-full w-full shrink-0 justify-center ${isAnimating ? "duration-100" : "duration-0"}`}
+      className={`flex h-full w-full shrink-0 justify-center`}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
@@ -36,7 +37,10 @@ export default function CalendarSlideContainer({
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
-      style={{ transform: `translateX(${translateX}px)` }}
+      style={{
+        transform: `translateX(${translateX}px)`,
+        transition: isAnimating ? `transform ${slideDuration}ms` : "none",
+      }}
     >
       {children}
     </div>

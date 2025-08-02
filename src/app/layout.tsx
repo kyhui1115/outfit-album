@@ -3,9 +3,9 @@ import { Poppins } from "next/font/google";
 
 import "@/_shared/style/globals.css";
 
-import AppContainer from "@/_features/appContainer/AppContainer";
 import PreventSwipeBackWrapper from "@/_shared/utils/PreventSwipeBackWrapper";
 import QueryProvider from "@/_shared/utils/queryProvider";
+import AppContainer from "@/app/_components/container/AppContainer";
 
 const poppins = Poppins({
   variable: "--font-poppins",

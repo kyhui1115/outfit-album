@@ -1,4 +1,4 @@
-import AlbumImageList from "@/_features/album/AlbumImageList";
+import AlbumImageList from "@/app/(afterLogin)/album/_components/album/AlbumImageList";
 
 export default function Page() {
   return <AlbumImageList />;

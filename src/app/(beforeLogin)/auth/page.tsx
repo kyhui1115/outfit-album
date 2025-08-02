@@ -1,5 +1,6 @@
-import LoginButtonContainer from "@/_features/auth/LoginButtonContainer";
 import Title from "@/_shared/ui/Title";
+
+import LoginButtonContainer from "./_components/LoginButtonContainer";
 
 export default function Page() {
   return (

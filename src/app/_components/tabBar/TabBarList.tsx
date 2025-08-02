@@ -1,10 +1,11 @@
 "use client";
 
-import TabBarItemButton from "@/_features/tabBar/TabBarItemButton";
 import DIC from "@/_shared/dictionary";
 import { useIsMobile } from "@/_shared/hooks/useIsMobile";
 import { useIsPad } from "@/_shared/hooks/useIsPad";
 import { isPWA } from "@/_shared/utils/isPWA";
+
+import TabBarItemButton from "./TabBarItemButton";
 
 export default function TabBarList() {
   const isMobile = useIsMobile();

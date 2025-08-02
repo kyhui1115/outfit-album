@@ -14,6 +14,7 @@ export default function AlbumImage({ imageUrl, id }: Props) {
 
   const btnHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     const parent = e.currentTarget.parentElement;
+
     if (parent) {
       const parentRect = parent.getBoundingClientRect();
       const rect = e.currentTarget.getBoundingClientRect();

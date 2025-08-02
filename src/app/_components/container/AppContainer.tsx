@@ -6,9 +6,9 @@ import useImageUrls from "@/_shared/store/Image";
 import useIsModal from "@/_shared/store/isModal";
 import Header from "@/_shared/ui/Header";
 
-import Modal from "../../_shared/ui/modal/Modal";
-import AlbumModal from "../albumModal/AlbumModal";
-import CalendarDayModal from "../calendarDayModal/CalendarDayModal";
+import Modal from "../../../_shared/ui/modal/Modal";
+import AlbumModal from "../../(afterLogin)/album/_components/albumModal/AlbumModal";
+import CalendarDayModal from "../../(afterLogin)/calendar/_components/calendarDayModal/CalendarDayModal";
 
 interface Props {
   children: ReactNode;

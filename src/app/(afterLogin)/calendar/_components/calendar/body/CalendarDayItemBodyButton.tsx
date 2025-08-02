@@ -44,7 +44,8 @@ export default function CalendarDayItemBodyButton({
           alt=""
           fill
           className={`rounded-lg object-cover ${isMobile ? "p-0.5" : "p-1"}`}
-          loading="lazy"
+          priority={true}
+          loading="eager"
           sizes="(max-width: 768px) 50vw, 25vw"
         />
       )}

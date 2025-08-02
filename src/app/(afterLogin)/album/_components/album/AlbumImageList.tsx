@@ -1,9 +1,9 @@
 "use client";
 
-import AlbumImage from "@/_features/album/AlbumImage";
 import DIC from "@/_shared/dictionary";
+import AlbumImage from "@/app/(afterLogin)/album/_components/album/AlbumImage";
 
-import SelectedImageContainer from "./selectedImage/SelectedImageContainer";
+import SelectedImageContainer from "../selectedImage/SelectedImageContainer";
 
 export default function AlbumImageList() {
   return (
